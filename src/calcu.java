@@ -135,19 +135,47 @@ public class calcu {
             }
         });
 
+        // Funcion Resta
+        restabt.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!numeros.getText().isEmpty()) {
+                    num1 = Float.parseFloat(numeros.getText());
+                    numeros.setText(numeros.getText() + " - ");
+                    decimal = false;
+                }
+            }
+        });
+
         // Resultado al momento de presionar igual
         igualButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (!numeros.getText().isEmpty() && numeros.getText().contains("+")) {
-                    String[] parts = numeros.getText().split("\\+");
-                    if (parts.length == 2) {
-                        num2 = Float.parseFloat(parts[1]);
-                        float suma = num1 + num2;
-                        resultado.setText(String.valueOf(suma));
-                        resultado.setHorizontalAlignment(SwingConstants.RIGHT);
-                        num1 = suma;
-                        decimal = false;
+                if (!numeros.getText().isEmpty()) {
+                    String operacion = numeros.getText();
+                    String[] parts;
+                    // Si la opcion es Suma
+                    if (operacion.contains("+")) {
+                        parts = operacion.split("\\+");
+                        if (parts.length == 2) {
+                            num1 = Float.parseFloat(parts[0].trim());
+                            num2 = Float.parseFloat(parts[1].trim());
+                            float suma = num1 + num2;
+                            resultado.setText(String.valueOf(suma));
+                            resultado.setHorizontalAlignment(SwingConstants.RIGHT);
+                            decimal = false;
+                        }
+                    // Si la opcion es resta
+                    } else if (operacion.contains("-")) {
+                        parts = operacion.split("-");
+                        if (parts.length == 2) {
+                            num1 = Float.parseFloat(parts[0].trim());
+                            num2 = Float.parseFloat(parts[1].trim());
+                            float resta = num1 - num2;
+                            resultado.setText(String.valueOf(resta));
+                            resultado.setHorizontalAlignment(SwingConstants.RIGHT);
+                            decimal = false;
+                        }
                     }
                 }
             }
