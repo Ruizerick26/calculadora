@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ebe198c-0bb3-4f0b-99ce-bf70c71ddaf4" name="Changes" comment="funcionResta">
+    <list default="true" id="5ebe198c-0bb3-4f0b-99ce-bf70c71ddaf4" name="Changes" comment="funcionDEL">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/calcu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calcu.java" afterDir="false" />
     </list>
@@ -22,6 +22,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2SGMKoYJPIgt54457LCgie7eJ3u" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -53,7 +56,7 @@
       <option name="presentableId" value="Default" />
       <updated>1688768428278</updated>
       <workItem from="1688768429467" duration="7902000" />
-      <workItem from="1689027458039" duration="2209000" />
+      <workItem from="1689027458039" duration="3487000" />
     </task>
     <task id="LOCAL-00001" summary="funcionSuma">
       <option name="closed" value="true" />
@@ -71,7 +74,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689029267897</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="funcionDEL">
+      <option name="closed" value="true" />
+      <created>1689029750439</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1689029750439</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -80,6 +91,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="funcionSuma" />
     <MESSAGE value="funcionResta" />
-    <option name="LAST_COMMIT_MESSAGE" value="funcionResta" />
+    <MESSAGE value="funcionDEL" />
+    <option name="LAST_COMMIT_MESSAGE" value="funcionDEL" />
   </component>
 </project>

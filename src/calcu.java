@@ -153,6 +153,17 @@ public class calcu {
             }
         });
 
+        // Funcion Seno
+        sinButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (numeros.getText().isEmpty()) {
+                    numeros.setText("sin");
+                }
+            }
+        });
+
+
         // Resultado al momento de presionar igual
         igualButton.addActionListener(new ActionListener() {
             @Override
@@ -160,7 +171,7 @@ public class calcu {
                 if (!numeros.getText().isEmpty()) {
                     String operacion = numeros.getText();
                     String[] parts;
-                    // Si la opcion es Suma
+                    // Si la operacion es Suma
                     if (operacion.contains("+")) {
                         parts = operacion.split("\\+");
                         if (parts.length == 2) {
@@ -171,7 +182,7 @@ public class calcu {
                             resultado.setHorizontalAlignment(SwingConstants.RIGHT);
                             decimal = false;
                         }
-                    // Si la opcion es resta
+                    // Si la operacion es Resta
                     } else if (operacion.contains("-")) {
                         parts = operacion.split("-");
                         if (parts.length == 2) {
@@ -182,6 +193,12 @@ public class calcu {
                             resultado.setHorizontalAlignment(SwingConstants.RIGHT);
                             decimal = false;
                         }
+                    // Si la operacion es Seno
+                    } else if (operacion.startsWith("sin")) {
+                        double angulo = Double.parseDouble(operacion.substring(3));
+                        double resultadoSeno = Math.sin(Math.toRadians(angulo));
+                        resultado.setText(String.valueOf(resultadoSeno));
+                        resultado.setHorizontalAlignment(SwingConstants.RIGHT);
                     }
                 }
             }
