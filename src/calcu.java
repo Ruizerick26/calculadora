@@ -104,12 +104,18 @@ public class calcu {
                 numeros.setText(numeros.getText()+"0");
             }
         });
-        button17.addActionListener(new ActionListener() {
+
+        // Ps lo mismo que hace el del de una calcu
+        DELButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(decimal == false) {
-                    decimal = true;
-                    numeros.setText(numeros.getText() + ".");
+                if (!numeros.getText().isEmpty()) {
+                    String currentText = numeros.getText();
+                    if (currentText.length() > 1) {
+                        numeros.setText(currentText.substring(0, currentText.length() - 1));
+                    } else {
+                        numeros.setText("");
+                    }
                 }
             }
         });
@@ -129,7 +135,7 @@ public class calcu {
             public void actionPerformed(ActionEvent e) {
                 if (!numeros.getText().isEmpty()) {
                     num1 = Float.parseFloat(numeros.getText());
-                    numeros.setText(numeros.getText() + " + ");
+                    numeros.setText(numeros.getText() + "+");
                     decimal = false;
                 }
             }
