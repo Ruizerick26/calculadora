@@ -163,6 +163,16 @@ public class calcu {
             }
         });
 
+        // Función Coseno
+        cosButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (numeros.getText().isEmpty()) {
+                    numeros.setText("cos");
+                }
+            }
+        });
+
 
         // Resultado al momento de presionar igual
         igualButton.addActionListener(new ActionListener() {
@@ -196,8 +206,17 @@ public class calcu {
                     // Si la operacion es Seno
                     } else if (operacion.startsWith("sin")) {
                         double angulo = Double.parseDouble(operacion.substring(3));
-                        double resultadoSeno = Math.sin(Math.toRadians(angulo));
+                        double resultadoSeno = Math.sin((angulo));
                         resultado.setText(String.valueOf(resultadoSeno));
+                        resultado.setHorizontalAlignment(SwingConstants.RIGHT);
+                    // Si la operacion es Coseno
+                    } else if (operacion.startsWith("cos")) {
+                        double angulo = Double.parseDouble(operacion.substring(3));
+                        double resultadoCoseno = Math.cos(angulo);
+                        resultado.setText(String.valueOf(resultadoCoseno));
+                        resultado.setHorizontalAlignment(SwingConstants.RIGHT);
+                    } else {
+                        resultado.setText("ERROR!!");
                         resultado.setHorizontalAlignment(SwingConstants.RIGHT);
                     }
                 }
