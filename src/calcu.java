@@ -28,6 +28,7 @@ public class calcu {
     private JButton sqrt;
     private JTextField numeros;
     private JTextField resultado;
+    private JButton igualButton;
     private float num1;
     private float num2;
     private float rest;
@@ -42,6 +43,7 @@ public class calcu {
     }
 
     public calcu(){
+        // Botones del 0 al 9
         a1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -111,11 +113,46 @@ public class calcu {
                 }
             }
         });
+
+        // Boton pa borrar los datos de la pantalla
         ACButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                    numeros.setText("");
+                numeros.setText("");
+                resultado.setText("");
+            }
+        });
+
+        // Funcion Suma
+        sumabt.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!numeros.getText().isEmpty()) {
+                    num1 = Float.parseFloat(numeros.getText());
+                    numeros.setText(numeros.getText() + " + ");
+                    decimal = false;
+                }
+            }
+        });
+
+        // Resultado al momento de presionar igual
+        igualButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!numeros.getText().isEmpty() && numeros.getText().contains("+")) {
+                    String[] parts = numeros.getText().split("\\+");
+                    if (parts.length == 2) {
+                        num2 = Float.parseFloat(parts[1]);
+                        float suma = num1 + num2;
+                        resultado.setText(String.valueOf(suma));
+                        resultado.setHorizontalAlignment(SwingConstants.RIGHT);
+                        num1 = suma;
+                        decimal = false;
+                    }
+                }
             }
         });
     }
 }
+
+

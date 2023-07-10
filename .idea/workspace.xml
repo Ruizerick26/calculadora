@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ebe198c-0bb3-4f0b-99ce-bf70c71ddaf4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/calcu.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/calcu.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/calcu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calcu.java" afterDir="false" />
@@ -38,6 +37,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "282",
     "WebServerToolWindowFactoryState": "false",
+    "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -54,6 +54,7 @@
       <option name="presentableId" value="Default" />
       <updated>1688768428278</updated>
       <workItem from="1688768429467" duration="7902000" />
+      <workItem from="1689027458039" duration="1222000" />
     </task>
     <servers />
   </component>
