@@ -28,6 +28,9 @@ public class calcu {
     private JTextField numeros;
     private JTextField resultado;
     private JButton igualButton;
+    private JButton puntobt;
+    private JTextField n1;
+    private JTextField n2;
     private float num1;
     private float num2;
     private boolean decimal = false;
@@ -102,6 +105,16 @@ public class calcu {
                 numeros.setText(numeros.getText() + "0");
             }
         });
+        puntobt.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (decimal == false) {
+                    numeros.setText(numeros.getText() + ".");
+                    decimal = true;
+                }
+
+            }
+        });
 
         // Ps lo mismo que hace el del de una calcu
         DELButton.addActionListener(new ActionListener() {
@@ -118,7 +131,7 @@ public class calcu {
             }
         });
 
-        // Boton pa borrar los datos de la pantalla
+        // Boton para borrar los datos de la pantalla
         ACButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -143,7 +156,11 @@ public class calcu {
         restabt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (!numeros.getText().isEmpty()) {
+                if (numeros.getText().isEmpty()) {
+                    numeros.setText("-");
+                    decimal=false;
+                }
+                else if (!numeros.getText().isEmpty()) {
                     num1 = Float.parseFloat(numeros.getText());
                     numeros.setText(numeros.getText() + " - ");
                     decimal = false;
@@ -248,14 +265,26 @@ public class calcu {
 
                         // Si la operacion es Resta
                     } else if (operacion.contains("-")) {
-                        parts = operacion.split("-");
-                        if (parts.length == 2) {
-                            num1 = Float.parseFloat(parts[0].trim());
-                            num2 = Float.parseFloat(parts[1].trim());
+                        if (num1 < 0){
+                            parts = operacion.split("-");
+                            num1 = -(Float.parseFloat(parts[1].trim()));
+                            num2 = Float.parseFloat(parts[2].trim());
                             float resta = num1 - num2;
                             resultado.setText(String.valueOf(resta));
                             resultado.setHorizontalAlignment(SwingConstants.RIGHT);
                             decimal = false;
+
+                        }
+                        else {
+                            parts = operacion.split("-");
+                            if (parts.length == 2) {
+                                num1 = Float.parseFloat(parts[0].trim());
+                                num2 = Float.parseFloat(parts[1].trim());
+                                float resta = num1 - num2;
+                                resultado.setText(String.valueOf(resta));
+                                resultado.setHorizontalAlignment(SwingConstants.RIGHT);
+                                decimal = false;
+                            }
                         }
 
                         //Si la operacion es multiplicacion
@@ -276,22 +305,41 @@ public class calcu {
                         if (parts.length == 2) {
                             num1 = Float.parseFloat(parts[0].trim());
                             num2 = Float.parseFloat(parts[1].trim());
-                            float multiplicacion = num1 / num2;
-                            resultado.setText(String.valueOf(multiplicacion));
-                            resultado.setHorizontalAlignment(SwingConstants.RIGHT);
-                            decimal = false;
+                            float div = num1 / num2;
+                            if(num1 == 0) {
+                                resultado.setText("MATH ERROR");
+                                resultado.setHorizontalAlignment(SwingConstants.RIGHT);
+                            }else {
+                                resultado.setText(String.valueOf(div));
+                                resultado.setHorizontalAlignment(SwingConstants.RIGHT);
+                                decimal = false;
+                            }
                         }
 
                         // Si la operacion es potencia
                     } else if (operacion.contains("^")) {
-                        parts = operacion.split("\\^");
-                        if (parts.length == 2) {
+                        n2.setText(operacion);
+                        if(num1<0) {
+                            n2.setText("entro");
+                            parts = operacion.split("\\^");
                             num1 = Float.parseFloat(parts[0].trim());
+                            n1.setText(String.valueOf(num1));
                             num2 = Float.parseFloat(parts[1].trim());
                             double potencia = Math.pow(num1, num2);
                             resultado.setText(String.valueOf(potencia));
                             resultado.setHorizontalAlignment(SwingConstants.RIGHT);
                             decimal = false;
+                        }
+                        else {
+                            parts = operacion.split("\\^");
+                            if (parts.length == 2) {
+                                num1 = Float.parseFloat(parts[0].trim());
+                                num2 = Float.parseFloat(parts[1].trim());
+                                double potencia = Math.pow(num1, num2);
+                                resultado.setText(String.valueOf(potencia));
+                                resultado.setHorizontalAlignment(SwingConstants.RIGHT);
+                                decimal = false;
+                            }
                         }
 
                         //Si la operacion es raiz cuadrada
