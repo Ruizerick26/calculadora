@@ -228,7 +228,6 @@ public class calcu {
             }
         });
 
-
         // Resultado al momento de presionar igual
         igualButton.addActionListener(new ActionListener() {
             @Override
