@@ -31,7 +31,6 @@ public class calcu {
     private JButton igualButton;
     private float num1;
     private float num2;
-    private float rest;
     private boolean decimal = false;
 
     public static void main(String[] args) {
@@ -42,66 +41,66 @@ public class calcu {
         frame.setVisible(true);
     }
 
-    public calcu(){
+    public calcu() {
         // Botones del 0 al 9
         a1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                numeros.setText(numeros.getText()+"1");
+                numeros.setText(numeros.getText() + "1");
             }
         });
         a2Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                numeros.setText(numeros.getText()+"2");
+                numeros.setText(numeros.getText() + "2");
             }
         });
         a3Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                numeros.setText(numeros.getText()+"3");
+                numeros.setText(numeros.getText() + "3");
             }
         });
         a4Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                numeros.setText(numeros.getText()+"4");
+                numeros.setText(numeros.getText() + "4");
             }
         });
         a5Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                numeros.setText(numeros.getText()+"5");
+                numeros.setText(numeros.getText() + "5");
             }
         });
         a6Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                numeros.setText(numeros.getText()+"6");
+                numeros.setText(numeros.getText() + "6");
             }
         });
         a7Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                numeros.setText(numeros.getText()+"7");
+                numeros.setText(numeros.getText() + "7");
             }
         });
         a8Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                numeros.setText(numeros.getText()+"8");
+                numeros.setText(numeros.getText() + "8");
             }
         });
         a9Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                numeros.setText(numeros.getText()+"9");
+                numeros.setText(numeros.getText() + "9");
             }
         });
         a0Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                numeros.setText(numeros.getText()+"0");
+                numeros.setText(numeros.getText() + "0");
             }
         });
 
@@ -135,7 +134,7 @@ public class calcu {
             public void actionPerformed(ActionEvent e) {
                 if (!numeros.getText().isEmpty()) {
                     num1 = Float.parseFloat(numeros.getText());
-                    numeros.setText(numeros.getText() + "+");
+                    numeros.setText(numeros.getText() + " + ");
                     decimal = false;
                 }
             }
@@ -153,12 +152,58 @@ public class calcu {
             }
         });
 
+        // Funcion multiplicación
+        xBt.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!numeros.getText().isEmpty()) {
+                    num1 = Float.parseFloat(numeros.getText());
+                    numeros.setText(numeros.getText() + " * ");
+                    decimal = false;
+                }
+            }
+        });
+
+        // Funcion division
+        divbt.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!numeros.getText().isEmpty()) {
+                    num1 = Float.parseFloat(numeros.getText());
+                    numeros.setText(numeros.getText() + " / ");
+                    decimal = false;
+                }
+            }
+        });
+
+        // Funcion raíz cuadrada
+        sqrt.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (numeros.getText().isEmpty()) {
+                    numeros.setText("sqrt ");
+                }
+            }
+        });
+
+        // Funcion potencia
+        potenbt.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!numeros.getText().isEmpty()) {
+                    num1 = Float.parseFloat(numeros.getText());
+                    numeros.setText(numeros.getText() + " ^ ");
+                    decimal = false;
+                }
+            }
+        });
+
         // Funcion Seno
         sinButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (numeros.getText().isEmpty()) {
-                    numeros.setText("sin");
+                    numeros.setText("sin ");
                 }
             }
         });
@@ -168,7 +213,17 @@ public class calcu {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (numeros.getText().isEmpty()) {
-                    numeros.setText("cos");
+                    numeros.setText("cos ");
+                }
+            }
+        });
+
+        // Funcion Tangente
+        tanButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (numeros.getText().isEmpty()) {
+                    numeros.setText("tan ");
                 }
             }
         });
@@ -192,7 +247,8 @@ public class calcu {
                             resultado.setHorizontalAlignment(SwingConstants.RIGHT);
                             decimal = false;
                         }
-                    // Si la operacion es Resta
+
+                        // Si la operacion es Resta
                     } else if (operacion.contains("-")) {
                         parts = operacion.split("-");
                         if (parts.length == 2) {
@@ -203,26 +259,79 @@ public class calcu {
                             resultado.setHorizontalAlignment(SwingConstants.RIGHT);
                             decimal = false;
                         }
-                    // Si la operacion es Seno
+
+                        //Si la operacion es multiplicacion
+                    } else if (operacion.contains("*")) {
+                        parts = operacion.split("\\*");
+                        if (parts.length == 2) {
+                            num1 = Float.parseFloat(parts[0].trim());
+                            num2 = Float.parseFloat(parts[1].trim());
+                            float multiplicacion = num1 * num2;
+                            resultado.setText(String.valueOf(multiplicacion));
+                            resultado.setHorizontalAlignment(SwingConstants.RIGHT);
+                            decimal = false;
+                        }
+
+                        //Si la operacion es division
+                    } else if (operacion.contains("/")) {
+                        parts = operacion.split("/");
+                        if (parts.length == 2) {
+                            num1 = Float.parseFloat(parts[0].trim());
+                            num2 = Float.parseFloat(parts[1].trim());
+                            float multiplicacion = num1 / num2;
+                            resultado.setText(String.valueOf(multiplicacion));
+                            resultado.setHorizontalAlignment(SwingConstants.RIGHT);
+                            decimal = false;
+                        }
+
+                        // Si la operacion es potencia
+                    } else if (operacion.contains("^")) {
+                        parts = operacion.split("\\^");
+                        if (parts.length == 2) {
+                            num1 = Float.parseFloat(parts[0].trim());
+                            num2 = Float.parseFloat(parts[1].trim());
+                            double potencia = Math.pow(num1, num2);
+                            resultado.setText(String.valueOf(potencia));
+                            resultado.setHorizontalAlignment(SwingConstants.RIGHT);
+                            decimal = false;
+                        }
+
+                        //Si la operacion es raiz cuadrada
+                    } else if (operacion.startsWith("sqrt")) {
+                        double num = Double.parseDouble(operacion.substring(4));
+                        double raiz = Math.sqrt((num));
+                        resultado.setText(String.valueOf(raiz));
+                        resultado.setHorizontalAlignment(SwingConstants.RIGHT);
+
+                        // Si la operacion es Seno
                     } else if (operacion.startsWith("sin")) {
                         double angulo = Double.parseDouble(operacion.substring(3));
                         double resultadoSeno = Math.sin((angulo));
                         resultado.setText(String.valueOf(resultadoSeno));
                         resultado.setHorizontalAlignment(SwingConstants.RIGHT);
-                    // Si la operacion es Coseno
+
+                        // Si la operacion es Coseno
                     } else if (operacion.startsWith("cos")) {
                         double angulo = Double.parseDouble(operacion.substring(3));
                         double resultadoCoseno = Math.cos(angulo);
                         resultado.setText(String.valueOf(resultadoCoseno));
                         resultado.setHorizontalAlignment(SwingConstants.RIGHT);
-                    } else {
-                        resultado.setText("ERROR!!");
+
+                        // Si la operacion es Tangente
+                    } else if (operacion.startsWith("tan")) {
+                        double angulo = Double.parseDouble(operacion.substring(4));
+                        double resultadoTan = Math.tan((angulo));
+                        resultado.setText(String.valueOf(resultadoTan));
                         resultado.setHorizontalAlignment(SwingConstants.RIGHT);
+
+                        } else {
+                            resultado.setText("ERROR!!");
+                            resultado.setHorizontalAlignment(SwingConstants.RIGHT);
+                        }
                     }
                 }
-            }
-        });
+            });
+        }
     }
-}
 
 
