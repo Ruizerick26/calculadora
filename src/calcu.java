@@ -20,7 +20,6 @@ public class calcu {
     private JButton a2Button;
     private JButton a3Button;
     private JButton restabt;
-    private JButton button17;
     private JButton a0Button;
     private JButton sumabt;
     private JButton ACButton;
