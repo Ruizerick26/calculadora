@@ -55,7 +55,7 @@
       <updated>1688768428278</updated>
       <workItem from="1688768429467" duration="7902000" />
       <workItem from="1689027458039" duration="4462000" />
-      <workItem from="1689033821518" duration="6618000" />
+      <workItem from="1689033821518" duration="6937000" />
     </task>
     <task id="LOCAL-00001" summary="funcionSuma">
       <option name="closed" value="true" />
@@ -96,7 +96,28 @@
       <option name="project" value="LOCAL" />
       <updated>1689040459001</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ya cabe xd">
+      <created>1689040511775</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1689040511775</updated>
+    </task>
+    <task id="LOCAL-00007" summary="ya cabe xd">
+      <created>1689040566395</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1689040566395</updated>
+    </task>
+    <task id="LOCAL-00008" summary="ya cabe xd">
+      <created>1689040697863</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1689040697863</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,6 +139,7 @@
     <MESSAGE value="funcionResta" />
     <MESSAGE value="funcionDEL" />
     <MESSAGE value="funcionSin" />
+    <MESSAGE value="x" />
     <MESSAGE value="ya cabe xd" />
     <option name="LAST_COMMIT_MESSAGE" value="ya cabe xd" />
   </component>
