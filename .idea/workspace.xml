@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ebe198c-0bb3-4f0b-99ce-bf70c71ddaf4" name="Changes" comment="funcionSin">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/calcu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calcu.java" afterDir="false" />
-    </list>
+    <list default="true" id="5ebe198c-0bb3-4f0b-99ce-bf70c71ddaf4" name="Changes" comment="ya cabe xd" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +34,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "282",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "13",
     "WebServerToolWindowFactoryState": "false",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
@@ -58,7 +55,7 @@
       <updated>1688768428278</updated>
       <workItem from="1688768429467" duration="7902000" />
       <workItem from="1689027458039" duration="4462000" />
-      <workItem from="1689033821518" duration="6303000" />
+      <workItem from="1689033821518" duration="6618000" />
     </task>
     <task id="LOCAL-00001" summary="funcionSuma">
       <option name="closed" value="true" />
@@ -92,17 +89,36 @@
       <option name="project" value="LOCAL" />
       <updated>1689031170225</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ya cabe xd">
+      <created>1689040459001</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1689040459001</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="funcionSuma" />
     <MESSAGE value="funcionResta" />
     <MESSAGE value="funcionDEL" />
     <MESSAGE value="funcionSin" />
-    <option name="LAST_COMMIT_MESSAGE" value="funcionSin" />
+    <MESSAGE value="ya cabe xd" />
+    <option name="LAST_COMMIT_MESSAGE" value="ya cabe xd" />
   </component>
 </project>
